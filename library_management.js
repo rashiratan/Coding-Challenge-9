@@ -70,3 +70,19 @@ class Patron {
         }
     }
 }
+
+//task 4
+class VIPPatron extends Patron {
+    constructor(name, borrowedBooks, priority) { //add priority property to vip patrons
+        super (name); //calling parent class
+        this.priority = priority; //setting priortiy 
+    }
+    borrowBook(book) {
+        if (this.priority && book.isAvailable === true){ //check vip status and availability
+        super.borrowBook(book);} // VIP patrons borrow if the book is available}
+        else {
+            //error message if book unavailable
+        return `VIP Patron ${this.name} tried to borrow the book ${book.title}, but the book is unavailable at the moment.`;
+        }
+}
+}
