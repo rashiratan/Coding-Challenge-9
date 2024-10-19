@@ -19,3 +19,23 @@ class Book {
     //use getter and setter for book availability status
 }
 
+//task 2
+class Section {
+    constructor(name, books) {
+        this.name = name;
+        this.books = []; //create books array
+    }
+    addBook(book) {
+        this.books.push(book);//add new book to array using method
+    }
+    getAvailableBooks() {
+        let availableBooks = this.books.filter((book) => (book.isAvailable === true));
+        return availableBooks.length; //display books available 
+    }
+    listBooks() {
+        this.books.forEach((book, index) => {
+            console.log (`${index +1}. Title: ${book.title} \n Available: ${book.isAvailable}`);
+            }
+        ) //list all books and their availability
+    }
+}
