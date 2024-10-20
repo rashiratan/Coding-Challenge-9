@@ -38,6 +38,11 @@ class Section {
             }
         ) //list all books and their availability
     }
+//task 5
+/*calculateTotalBooksAvailable() {
+        return this.books.filter((book) => (book.isAvailable)).length;
+//not executing due to redundancy of the method with the getAvailableBooks method already in place    
+}*/
 }
 
 //task 3
