@@ -91,3 +91,38 @@ class VIPPatron extends Patron {
         }
 }
 }
+
+//task 6
+// Create sections
+const horror = new Section("Horror");
+const fantasy = new Section("Fantasy");
+
+// Create books
+const book1 = new Book("1929", "William Pandora", "4567893110");
+const book2 = new Book("Crazy Monster", "Devin Hart", "8597461203");
+const book3 = new Book("The Princess", "Farah Hawkins", "4567823910");
+
+// Add books to sections
+horror.addBook(book1);
+horror.addBook(book2);
+fantasy.addBook(book3);
+
+// Create patrons
+const regularPatron = new Patron("Frank Hill");
+const vipPatron = new VIPPatron("Victoria Menalie", true);
+
+// Regular patron tries to borrow a book
+regularPatron.borrowBook(book1);
+
+// VIP patron tries to borrow a book (has priority)
+vipPatron.borrowBook(book1);
+
+// Return the book
+regularPatron.returnBook(book1);
+
+// List books and availability
+horror.listBooks();
+
+// Calculate total available books in each section
+console.log(`Total available books in Fiction: ${horror.getAvailableBooks()}`);
+console.log(`Total available books in Science: ${fantasy.getAvailableBooks()}`);
